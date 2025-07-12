@@ -43,7 +43,7 @@ For the deploy provider we are going to use Amazon S3, we will create an S3 buck
 2. Click Create bucket.
 3. Name it something unique like `my-react-cicd-demo`
 
-![Image](https://github.com/Ajaytipte/aws-codepipeline-react-s3/blob/main/assets/Screenshot%202025-07-12%20211712.png)
+<img src="https://github.com/Ajaytipte/aws-codepipeline-react-s3/blob/main/assets/Screenshot%202025-07-12%20211712.png">
 
 Once the s3 bucket is created, leave it for now, as we will come for it to finish the setup later.
 
