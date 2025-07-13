@@ -72,7 +72,7 @@ Make sure you have the following installed on your machine:
 
 ```bash
 git clone https://github.com/Ajaytipte/aws-codepipeline-react-s3.git
-cd saas-landing-page
+cd aws-codepipeline-react-s3
 ```
 
 **Installation**
