@@ -71,7 +71,7 @@ Make sure you have the following installed on your machine:
 **Cloning the Repository**
 
 ```bash
-git clone https://github.com/julien-muke/saas-landing-page.git
+git clone https://github.com/Ajaytipte/aws-codepipeline-react-s3.git
 cd saas-landing-page
 ```
 
