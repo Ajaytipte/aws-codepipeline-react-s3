@@ -56,7 +56,7 @@ Now the fun part—building the pipeline.
 2. Name your pipeline: `reactapp-cicd-demo`
 3. Choose a new service role or an existing one.
 
-![Image](https://github.com/Ajaytipte/aws-codepipeline-react-s3/blob/main/assets/Screenshot%202025-07-12%20212118.png?raw=true)
+![Image](https://github.com/Ajaytipte/aws-codepipeline-react-s3/blob/main/AWS%20files%20screenshots/assets/Screenshot%202025-07-12%20212118.png?raw=true)
 
 4. Add source stage:
 <br>- Source provider: GitHub (connect your GitHub account).
@@ -64,11 +64,11 @@ Now the fun part—building the pipeline.
 
 ⚠️Note: Make sure you select the repository that we cloned in Step 1
 
-![Image](https://github.com/Ajaytipte/aws-codepipeline-react-s3/blob/main/assets/Screenshot%202025-07-12%20212227.png?raw=true)
+![Image](https://github.com/Ajaytipte/aws-codepipeline-react-s3/blob/main/AWS%20files%20screenshots/assets/Screenshot%202025-07-12%20212227.png?raw=true)
 
 <br>- Once you are connected to your Github and select your repository, then choose "Next"
 
-![Image](https://github.com/Ajaytipte/aws-codepipeline-react-s3/blob/main/assets/Screenshot%202025-07-12%20212740.png?raw=true)
+![Image](https://github.com/Ajaytipte/aws-codepipeline-react-s3/blob/main/AWS%20files%20screenshots/assets/Screenshot%202025-07-12%20212740.png?raw=true)
 
 5. Add build stage:
 <br>- Provider: AWS CodeBuild.
@@ -83,12 +83,12 @@ Now let’s set up CodeBuild, which will handle building the React app.
 1. Go to CodeBuild, click Create Build Project.
 2. Name it something like `react-cicd-pipeline-demo`
 
-![Image](https://github.com/Ajaytipte/aws-codepipeline-react-s3/blob/main/assets/Screenshot%202025-07-12%20213346.png?raw=true)
+![Image](https://github.com/Ajaytipte/aws-codepipeline-react-s3/blob/main/AWS%20files%20screenshots/assets/Screenshot%202025-07-12%20213346.png?raw=true)
 
 3. Choose a managed image: aws/codebuild/standard:6.0 (or latest).
 4. Under build specifications, choose "Use a buildspec file" 
 
-![Image](https://github.com/Ajaytipte/aws-codepipeline-react-s3/blob/main/assets/Screenshot%202025-07-12%20213524.png?raw=true)
+![Image](https://github.com/Ajaytipte/aws-codepipeline-react-s3/blob/main/AWS%20files%20screenshots/assets/Screenshot%202025-07-12%20213524.png?raw=true)
 
 5. Inside your GitHub repo, create a file named `buildspec.yml` in the root:
 
@@ -121,14 +121,14 @@ artifacts:
 6. Back to the CodeBuild Project, keep the rest as default and choose "Continue to CodePipeline"
 7. Then the CodeBuild project will be create and added to the build stage as shown below, then choose "Next"
 
-![Image](https://github.com/Ajaytipte/aws-codepipeline-react-s3/blob/main/assets/Screenshot%202025-07-12%20213225.png?raw=true)
+![Image](https://github.com/Ajaytipte/aws-codepipeline-react-s3/blob/main/AWS%20files%20screenshots/assets/Screenshot%202025-07-12%20213225.png?raw=true)
 
 8. Add deploy stage:
 <br>- Provider: Amazon S3.
 <br>- Bucket: Select the one you created earlier `my-react-cicd-demo`
 <br>- Extract file option: YES, choose "Next"
 
-![Image](https://github.com/Ajaytipte/aws-codepipeline-react-s3/blob/main/assets/Screenshot%202025-07-12%20214321.png?raw=true)
+![Image](https://github.com/Ajaytipte/aws-codepipeline-react-s3/blob/main/AWS%20files%20screenshots/assets/Screenshot%202025-07-12%20214321.png?raw=true)
 
 <br>- Lastly, review all the configuration and click "Create pipeline"
 
@@ -142,21 +142,21 @@ Once the pipeline is successfully created, you’ll see it run through the `sour
 4. Now let's make this S3 Bucket public:
 <br>- On the top bar, choose "Properties"
 
-![Image](https://github.com/Ajaytipte/aws-codepipeline-react-s3/blob/main/assets/Screenshot%202025-07-12%20214936.png?raw=true)
+![Image](https://github.com/Ajaytipte/aws-codepipeline-react-s3/blob/main/AWS%20files%20screenshots/assets/Screenshot%202025-07-12%20214936.png?raw=true)
 
 <br>- Scroll down to "Static Website Hosting" and click "Edit"
 
-![Image](https://github.com/Ajaytipte/aws-codepipeline-react-s3/blob/main/assets/Screenshot%202025-07-12%20215148.png?raw=true)
+![Image](https://github.com/Ajaytipte/aws-codepipeline-react-s3/blob/main/AWS%20files%20screenshots/assets/Screenshot%202025-07-12%20215148.png?raw=true)
 
 <br>- Under "Static Website Hosting", choose "Enable"
 <br>- And specify `index.html` as the index document, then click "Save"
 
-![Image](https://github.com/Ajaytipte/aws-codepipeline-react-s3/blob/main/assets/Screenshot%202025-07-12%20220906.png?raw=true)
+![Image](https://github.com/Ajaytipte/aws-codepipeline-react-s3/blob/main/AWS%20files%20screenshots/assets/Screenshot%202025-07-12%20220906.png?raw=true)
 
 <br>- Next, edit some permissions, still on the tob bar choose "Permissions"
 <br>- Uncheck "Block all public access" to allow public access, then click "Save changes"
 
-![Image](https://github.com/Ajaytipte/aws-codepipeline-react-s3/blob/main/assets/Screenshot%202025-07-12%20220906.png?raw=true)
+![Image](https://github.com/Ajaytipte/aws-codepipeline-react-s3/blob/main/AWS%20files%20screenshots/assets/Screenshot%202025-07-12%20220906.png?raw=true)
 
 <br>- Next, we will add a bucket policy to allow public read access inside our s3 bucket. Here's the sample policy you can use:
 
@@ -176,16 +176,16 @@ Once the pipeline is successfully created, you’ll see it run through the `sour
 ```
 ⚠️ Replace: `your-bucket-name` with your actual bucket name, then click "Save"
 
-![Image](https://github.com/Ajaytipte/aws-codepipeline-react-s3/blob/main/assets/Screenshot%202025-07-12%20220947.png?raw=true)
+![Image](https://github.com/Ajaytipte/aws-codepipeline-react-s3/blob/main/AWS%20files%20screenshots/assets/Screenshot%202025-07-12%20220947.png?raw=true)
 
 <br>- Go back to the S3 Bucket console, on the top bar, choose Objects, then click on `index.html`
 <br>- To visit your React.js App, click on the Object URL.
 
-![Image](https://github.com/Ajaytipte/aws-codepipeline-react-s3/blob/main/assets/Screenshot%202025-07-12%20221003.png?raw=true)
+![Image](https://github.com/Ajaytipte/aws-codepipeline-react-s3/blob/main/AWS%20files%20screenshots/assets/Screenshot%202025-07-12%20221003.png?raw=true)
 
 <br>- You should see your React.js App running on Amazon S3
 
-![Image](https://github.com/Ajaytipte/aws-codepipeline-react-s3/blob/main/assets/Screenshot%202025-07-12%20221042.png?raw=true)
+![Image](https://github.com/Ajaytipte/aws-codepipeline-react-s3/blob/main/AWS%20files%20screenshots/assets/Screenshot%202025-07-12%20221042.png?raw=true)
 
 
 ## ➡️ Step 5 - Test the Pipeline
@@ -194,7 +194,7 @@ Let’s test the whole pipeline. I’ll make a small change to the homepage text
 
 As soon as the code is pushed, CodePipeline is triggered. You’ll see it run through the source, build, and deploy stages.
 
-![Image](https://github.com/Ajaytipte/aws-codepipeline-react-s3/blob/main/assets/Screenshot%202025-07-12%20214619.png?raw=true)
+![Image](https://github.com/Ajaytipte/aws-codepipeline-react-s3/blob/main/AWS%20files%20screenshots/assets/Screenshot%202025-07-12%20214619.png?raw=true)
 
 
 ## 🗑️ Clean Up Resources
